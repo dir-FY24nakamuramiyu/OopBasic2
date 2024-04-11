@@ -1,21 +1,22 @@
 package company;
 
-public class Employee {
-    
+public class Employee implements Workable {
+    // フィールド
     protected final String name;
     private final Department department;
     private final String position;
     private final int employeeId;
-    
+
+    // コンストラクター
     public Employee(String name, Department department, String position, int employeeId) {
         this.name = name;
         this.department = department;
         this.position = position;
         this.employeeId = employeeId;
     }
-    
+
     public void report(int times) {
-        System.out.println(times+"回目の報告をします。役職:"+ position +"、名前:"+name);
+        System.out.println(times + "回目の報告をします。役職：" + position + "、名前：" + name);
     }
     
     public void report() {
@@ -24,9 +25,11 @@ public class Employee {
     
     public void joinMeeting() {
         department.meeting();
-        System.out.println("上記の会議に参加します。部署:" + department.getName()+ "名前:" + name);
-        
+        System.out.println("→上記の会議に参加します。部署：" + department.getName() + "名前：" + name);
     }
-    
 
+    @Override
+    public void work() {
+        System.out.println("正社員として働きます。名前：" + name + slogan);
+    }
 }

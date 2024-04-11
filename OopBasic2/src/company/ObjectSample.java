@@ -20,6 +20,24 @@ public class ObjectSample {
         engineer.joinMeeting();
         engineer.developSoftware();
         
+        Employee projectManager = new Engineer("佐藤", devDepartment, "PM", 99, "Java");
+        
+        projectManager.report();
+        projectManager.joinMeeting();
+        if(projectManager instanceof Engineer) {
+            
+            ((Engineer) projectManager).developSoftware();            
+        }
+        
+        System.out.println("");
+        
+        var parttimeWorker = new ParttimeWorker("太田", department);
+        
+        ((Workable) employee).work();
+        ((Workable) engineer).work();
+        ((Workable) projectManager).work();
+        ((Workable) parttimeWorker).work(); 
+        
     }
 
 }
